@@ -41,13 +41,44 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 $first = 0;
 $second = 1;
-while ( $next < 12) {
+
+$numbers = array();
+
+	
+while($next <= 4000000)
+{
+
 	$next = $first + $second;
-	echo $next.',';
-	$counter++;
+	//echo $next.',';
 	$first = $second;
 	$second = $next;
+	if($next % 2 == 0) {
+	array_push($numbers, $next);
+	};
+	$next++;
 }
+echo '<br/>Sum of numbers(Variant_1):'.array_sum($numbers);
+
+?>
+
+<?php
+$sum = 0;
+$fibonacci = 1;
+$old1 = 0;
+$old2 = 1;
+
+while ($fibonacci <= 4000000) {
+	$fibonacci = $old1 + $old2;
+	$old1 = $old2;
+	$old2 = $fibonacci;
+	
+	if ($fibonacci % 2 == 0) {
+		// it's an even number
+		$sum += $fibonacci;
+	}
+}
+
+echo '<br/>Sum of numbers(Variant_2):'.$sum;
 ?>
 	
 </body>
