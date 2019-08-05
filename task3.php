@@ -52,3 +52,5 @@ for ($key = 1; $key = $max_number; $key++) {
 getPrimes($resultArray);
 
 ?>
+
+<script src="php-live-reload/php-live-reload/live-reload.js"></script>
